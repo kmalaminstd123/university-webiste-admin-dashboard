@@ -32,7 +32,7 @@ window.addEventListener('load', () => {
     }, 2000)
 
     // production
-    document.querySelector('.loading-bar').style.display = 'none'
+    //document.querySelector('.loading-bar').style.display = 'none'
 })
 
 // login page
