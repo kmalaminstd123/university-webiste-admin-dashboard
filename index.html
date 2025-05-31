@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- Loading Bar -->
+    <div class="loading-bar">
+        <div class="hourglassBackground">
+            <div class="hourglassContainer">
+                <div class="hourglassCurves"></div>
+                <div class="hourglassCapTop"></div>
+                <div class="hourglassGlassTop"></div>
+                <div class="hourglassSand"></div>
+                <div class="hourglassSandStream"></div>
+                <div class="hourglassCapBottom"></div>
+                <div class="hourglassGlass"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="../images/demo-logo.png" alt="Logo" class="admin-logo">
+                <h3>Admin Panel</h3>
+            </div>
+            
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="./index.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#courseSubmenu" data-bs-toggle="collapse">
+                        <i class="fas fa-graduation-cap"></i>
+                        Courses
+                        <i class="fas fa-chevron-down float-end"></i>
+                    </a>
+                    <ul class="collapse list-unstyled" id="courseSubmenu">
+                        <li><a href="./allCourse.html">All Courses</a></li>
+                        <li><a href="./addCourse.html">Add Course</a></li>
+                        <li><a href="./categories.html">Categories</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./students.html">
+                        <i class="fas fa-users"></i>
+                        Students
+                    </a>
+                </li>
+                <li>
+                    <a href="./instructors.html">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Instructors
+                    </a>
+                </li>
+                <li>
+                    <a href="./enrollment.html">
+                        <i class="fas fa-user-graduate"></i>
+                        Enrollments
+                    </a>
+                </li>
+                <li>
+                    <a href="./payment.html">
+                        <i class="fas fa-money-bill-wave"></i>
+                        Payments
+                    </a>
+                </li>
+                <li>
+                    <a href="./settings.html">
+                        <i class="fas fa-cog"></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="content">
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" 
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../images/admin-avatar.jpg" alt="Admin" class="admin-avatar">
+                                <span>Admin Name</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Dashboard Content -->
+            <div class="container-fluid dashboard-content">
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <div class="stats-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stats-info">
+                                <h3>1,234</h3>
+                                <p>Total Students</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <div class="stats-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="stats-info">
+                                <h3>56</h3>
+                                <p>Total Courses</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <div class="stats-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="stats-info">
+                                <h3>$12,345</h3>
+                                <p>Total Revenue</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stats-card">
+                            <div class="stats-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stats-info">
+                                <h3>89%</h3>
+                                <p>Completion Rate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities & Enrollments -->
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h5>Recent Activities</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p>New student enrollment in "Web Development"</p>
+                                        <small>2 minutes ago</small>
+                                    </div>
+                                </div>
+                                <!-- More activity items... -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h5>Latest Enrollments</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="enrollment-item">
+                                    <img src="../images/student-avatar.jpg" alt="Student">
+                                    <div class="enrollment-details">
+                                        <h6>John Doe</h6>
+                                        <p>Web Development Course</p>
+                                    </div>
+                                </div>
+                                <!-- More enrollment items... -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./js/script.js"></script>
+</body>
+</html>

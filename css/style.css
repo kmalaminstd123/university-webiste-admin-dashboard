@@ -1,0 +1,907 @@
+:root {
+  --primary-color: #dc3545;
+  --heading-font: "Libre Baskerville", serif;
+  --paragraph-font: "Lato", sans-serif;
+  --sidebar-width: 250px;
+  --header-height: 60px;
+}
+
+body {
+  font-family: var(--paragraph-font);
+  background-color: #f4f6f9;
+}
+
+/* Loading Bar Styles */
+
+.loading-bar {
+  position: fixed;
+  height: 100dvh;
+  width: 100%;
+  background-color: #fff;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hourglassBackground {
+  position: relative;
+  background-color: rgb(71, 60, 60);
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  margin: 30px auto;
+}
+
+.hourglassContainer {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  width: 50px;
+  height: 70px;
+  -webkit-animation: hourglassRotate 2s ease-in 0s infinite;
+  animation: hourglassRotate 2s ease-in 0s infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.hourglassContainer div,
+.hourglassContainer div:before,
+.hourglassContainer div:after {
+  transform-style: preserve-3d;
+}
+
+@-webkit-keyframes hourglassRotate {
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  50% {
+    transform: rotateX(180deg);
+  }
+
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+
+@keyframes hourglassRotate {
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  50% {
+    transform: rotateX(180deg);
+  }
+
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+
+.hourglassCapTop {
+  top: 0;
+}
+
+.hourglassCapTop:before {
+  top: -25px;
+}
+
+.hourglassCapTop:after {
+  top: -20px;
+}
+
+.hourglassCapBottom {
+  bottom: 0;
+}
+
+.hourglassCapBottom:before {
+  bottom: -25px;
+}
+
+.hourglassCapBottom:after {
+  bottom: -20px;
+}
+
+.hourglassGlassTop {
+  transform: rotateX(90deg);
+  position: absolute;
+  top: -16px;
+  left: 3px;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  background-color: #999999;
+}
+
+.hourglassGlass {
+  perspective: 100px;
+  position: absolute;
+  top: 32px;
+  left: 20px;
+  width: 10px;
+  height: 6px;
+  background-color: #999999;
+  opacity: 0.5;
+}
+
+.hourglassGlass:before,
+.hourglassGlass:after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: #999999;
+  left: -17px;
+  width: 44px;
+  height: 28px;
+}
+
+.hourglassGlass:before {
+  top: -27px;
+  border-radius: 0 0 25px 25px;
+}
+
+.hourglassGlass:after {
+  bottom: -27px;
+  border-radius: 25px 25px 0 0;
+}
+
+.hourglassCurves:before,
+.hourglassCurves:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 32px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #333;
+  animation: hideCurves 2s ease-in 0s infinite;
+}
+
+.hourglassCurves:before {
+  left: 15px;
+}
+
+.hourglassCurves:after {
+  left: 29px;
+}
+
+@-webkit-keyframes hideCurves {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideCurves {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.hourglassSandStream:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 24px;
+  width: 3px;
+  background-color: white;
+  -webkit-animation: sandStream1 2s ease-in 0s infinite;
+  animation: sandStream1 2s ease-in 0s infinite;
+}
+
+.hourglassSandStream:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 36px;
+  left: 19px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff;
+  animation: sandStream2 2s ease-in 0s infinite;
+}
+
+@-webkit-keyframes sandStream1 {
+  0% {
+    height: 0;
+    top: 35px;
+  }
+
+  50% {
+    height: 0;
+    top: 45px;
+  }
+
+  60% {
+    height: 35px;
+    top: 8px;
+  }
+
+  85% {
+    height: 35px;
+    top: 8px;
+  }
+
+  100% {
+    height: 0;
+    top: 8px;
+  }
+}
+
+@keyframes sandStream1 {
+  0% {
+    height: 0;
+    top: 35px;
+  }
+
+  50% {
+    height: 0;
+    top: 45px;
+  }
+
+  60% {
+    height: 35px;
+    top: 8px;
+  }
+
+  85% {
+    height: 35px;
+    top: 8px;
+  }
+
+  100% {
+    height: 0;
+    top: 8px;
+  }
+}
+
+@-webkit-keyframes sandStream2 {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  51% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  91% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sandStream2 {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  51% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  91% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.hourglassSand:before,
+.hourglassSand:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 6px;
+  background-color: white;
+  perspective: 500px;
+}
+
+.hourglassSand:before {
+  top: 8px;
+  width: 39px;
+  border-radius: 3px 3px 30px 30px;
+  animation: sandFillup 2s ease-in 0s infinite;
+}
+
+.hourglassSand:after {
+  border-radius: 30px 30px 3px 3px;
+  animation: sandDeplete 2s ease-in 0s infinite;
+}
+
+@-webkit-keyframes sandFillup {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+
+  60% {
+    opacity: 1;
+    height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: 17px;
+  }
+}
+
+@keyframes sandFillup {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+
+  60% {
+    opacity: 1;
+    height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: 17px;
+  }
+}
+
+@-webkit-keyframes sandDeplete {
+  0% {
+    opacity: 0;
+    top: 45px;
+    height: 17px;
+    width: 38px;
+    left: 6px;
+  }
+
+  1% {
+    opacity: 1;
+    top: 45px;
+    height: 17px;
+    width: 38px;
+    left: 6px;
+  }
+
+  24% {
+    opacity: 1;
+    top: 45px;
+    height: 17px;
+    width: 38px;
+    left: 6px;
+  }
+
+  25% {
+    opacity: 1;
+    top: 41px;
+    height: 17px;
+    width: 38px;
+    left: 6px;
+  }
+
+  50% {
+    opacity: 1;
+    top: 41px;
+    height: 17px;
+    width: 38px;
+    left: 6px;
+  }
+
+  90% {
+    opacity: 1;
+    top: 41px;
+    height: 0;
+    width: 10px;
+    left: 20px;
+  }
+}
+
+@keyframes sandDeplete {
+  0% {
+    opacity: 0;
+    top: 45px;
+    height: 17px;
+    width: 38px;
+    left: 6px;
+  }
+
+  1% {
+    opacity: 1;
+    top: 45px;
+    height: 17px;
+    width: 38px;
+    left: 6px;
+  }
+
+  24% {
+    opacity: 1;
+    top: 45px;
+    height: 17px;
+    width: 38px;
+    left: 6px;
+  }
+
+  25% {
+    opacity: 1;
+    top: 41px;
+    height: 17px;
+    width: 38px;
+    left: 6px;
+  }
+
+  50% {
+    opacity: 1;
+    top: 41px;
+    height: 17px;
+    width: 38px;
+    left: 6px;
+  }
+
+  90% {
+    opacity: 1;
+    top: 41px;
+    height: 0;
+    width: 10px;
+    left: 20px;
+  }
+}
+
+/* spinner loadin end */
+
+/* Admin Wrapper */
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+#sidebar {
+  width: var(--sidebar-width);
+  background: #2c3e50;
+  color: #fff;
+  transition: all 0.3s;
+  position: fixed;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: #1a2634;
+  text-align: center;
+}
+
+.admin-logo {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.sidebar-header h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: var(--heading-font);
+  margin: 0;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+}
+
+#sidebar ul li a {
+  padding: 15px 20px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#sidebar ul li a i {
+  margin-right: 10px;
+}
+
+#sidebar ul li a:hover,
+#sidebar ul li.active>a {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+#sidebar ul ul a {
+  padding-left: 40px;
+  background: #243444;
+}
+
+/* Main Content */
+#content {
+  width: calc(100% - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
+  transition: all 0.3s;
+}
+
+/* Top Navigation */
+.navbar {
+  padding: 15px;
+  background: #fff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+#sidebarCollapse {
+  background: transparent;
+  border: none;
+}
+
+#sidebarCollapse:hover {
+  color: var(--primary-color);
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  padding: 20px;
+}
+
+/* Stats Cards */
+.stats-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.stats-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(220, 53, 69, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.stats-icon i {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.stats-info h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #2c3e50;
+}
+
+.stats-info p {
+  margin: 5px 0 0;
+  color: #6c757d;
+}
+
+/* Content Cards */
+.content-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.card-header h5 {
+  margin: 0;
+  font-family: var(--heading-font);
+  color: #2c3e50;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Activity Items */
+.activity-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(220, 53, 69, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.activity-icon i {
+  color: var(--primary-color);
+}
+
+.activity-details p {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.activity-details small {
+  color: #6c757d;
+}
+
+/* Enrollment Items */
+.enrollment-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.enrollment-item:last-child {
+  border-bottom: none;
+}
+
+.enrollment-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.enrollment-details h6 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.enrollment-details p {
+  margin: 5px 0 0;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+
+  #sidebar.active {
+    margin-left: 0;
+  }
+
+  #content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #content.active {
+    margin-left: 250px;
+  }
+}
+
+
+/* Courses Page Styles */
+.content-header h2 {
+  font-family: var(--heading-font);
+  color: #2c3e50;
+  margin: 0;
+}
+
+.course-thumb {
+  width: 60px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.action-buttons .btn {
+  padding: 0.25rem 0.5rem;
+}
+
+.table> :not(caption)>*>* {
+  padding: 1rem 0.75rem;
+}
+
+.table .form-check-input {
+  margin-top: 0;
+}
+
+.showing-entries {
+  color: #6c757d;
+}
+
+.pagination .page-link {
+  color: var(--primary-color);
+  padding: 0.5rem 0.75rem;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .table-responsive {
+    font-size: 14px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .showing-entries {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-body {
+    padding: 1rem;
+  }
+
+  .course-thumb {
+    width: 40px;
+    height: 30px;
+  }
+}
+
+
+/* =============== login page css start =============== */
+
+.login-wrapper {
+  min-height: 100vh;
+  background: var(--primary-color);
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+}
+
+.login-logo {
+  width: 120px;
+  margin-bottom: 1.5rem;
+}
+
+.login-title {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.form-floating {
+  margin-bottom: 1rem;
+}
+
+.login-btn {
+  padding: 0.8rem;
+  font-weight: 600;
+}
+
+.divider {
+  margin: 1.5rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background: #ddd;
+}
+
+.divider::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background: #ddd;
+}
+
+.forgot-password {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+  color: #0143a3;
+}
+
+
+#loginForm button{
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* =============== login page css start =============== */

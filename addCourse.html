@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - All Courses</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- Loading Bar -->
+    <div class="loading-bar">
+        <div class="hourglassBackground">
+            <div class="hourglassContainer">
+                <div class="hourglassCurves"></div>
+                <div class="hourglassCapTop"></div>
+                <div class="hourglassGlassTop"></div>
+                <div class="hourglassSand"></div>
+                <div class="hourglassSandStream"></div>
+                <div class="hourglassCapBottom"></div>
+                <div class="hourglassGlass"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-wrapper">
+        <!-- Sidebar - Same as dashboard -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="../images/demo-logo.png" alt="Logo" class="admin-logo">
+                <h3>Admin Panel</h3>
+            </div>
+            
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="./index.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#courseSubmenu" data-bs-toggle="collapse">
+                        <i class="fas fa-graduation-cap"></i>
+                        Courses
+                        <i class="fas fa-chevron-down float-end"></i>
+                    </a>
+                    <ul class="collapse list-unstyled" id="courseSubmenu">
+                        <li><a href="./allCourse.html">All Courses</a></li>
+                        <li><a href="./addCourse.html">Add Course</a></li>
+                        <li><a href="./categories.html">Categories</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./students.html">
+                        <i class="fas fa-users"></i>
+                        Students
+                    </a>
+                </li>
+                <li>
+                    <a href="./instructors.html">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Instructors
+                    </a>
+                </li>
+                <li>
+                    <a href="./enrollment.html">
+                        <i class="fas fa-user-graduate"></i>
+                        Enrollments
+                    </a>
+                </li>
+                <li>
+                    <a href="./payment.html">
+                        <i class="fas fa-money-bill-wave"></i>
+                        Payments
+                    </a>
+                </li>
+                <li>
+                    <a href="./settings.html">
+                        <i class="fas fa-cog"></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="content">
+            <!-- Top Navigation - Same as dashboard -->
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" 
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../images/admin-avatar.jpg" alt="Admin" class="admin-avatar">
+                                <span>Admin Name</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+
+
+            <div class="container-fluid">
+                <div class="content-header d-flex justify-content-between align-items-center py-3">
+                    <h2>Add New Course</h2>
+                    <a href="courses.html" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Courses
+                    </a>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <form class="course-form">
+                            <!-- Basic Information -->
+                            <div class="mb-4">
+                                <h5 class="form-section-title">Basic Information</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Course Title*</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Category*</label>
+                                        <select class="form-select" required>
+                                            <option value="">Select Category</option>
+                                            <option value="web">Web Development</option>
+                                            <option value="mobile">Mobile Development</option>
+                                            <option value="design">Design</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="form-label">Course Description*</label>
+                                        <textarea class="form-control" rows="4" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Media -->
+                            <div class="mb-4">
+                                <h5 class="form-section-title">Media</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Course Thumbnail*</label>
+                                        <div class="file-upload">
+                                            <input type="file" class="file-input" accept="image/*" required>
+                                            <div class="upload-placeholder">
+                                                <i class="fas fa-cloud-upload-alt"></i>
+                                                <p>Drag and drop or click to upload</p>
+                                                <span>Supported formats: JPG, PNG (Max size: 2MB)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Promotional Video (Optional)</label>
+                                        <input type="text" class="form-control" placeholder="Enter video URL">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Curriculum -->
+                            <div class="mb-4">
+                                <h5 class="form-section-title">Curriculum</h5>
+                                <div id="curriculum-sections">
+                                    <div class="curriculum-section mb-3">
+                                        <div class="card">
+                                            <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                                                <input type="text" class="form-control form-control-sm w-auto" placeholder="Section Title">
+                                                <button type="button" class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="lesson-list">
+                                                    <div class="lesson-item d-flex align-items-center gap-2 mb-2">
+                                                        <input type="text" class="form-control form-control-sm" placeholder="Lesson Title">
+                                                        <input type="text" class="form-control form-control-sm" placeholder="Video URL">
+                                                        <button type="button" class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i></button>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="btn btn-sm btn-outline-primary mt-2">
+                                                    <i class="fas fa-plus"></i> Add Lesson
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary">
+                                    <i class="fas fa-plus"></i> Add Section
+                                </button>
+                            </div>
+
+                            <!-- Pricing -->
+                            <div class="mb-4">
+                                <h5 class="form-section-title">Pricing</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Regular Price ($)*</label>
+                                        <input type="number" class="form-control" min="0" step="0.01" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Sale Price ($)</label>
+                                        <input type="number" class="form-control" min="0" step="0.01">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Information -->
+                            <div class="mb-4">
+                                <h5 class="form-section-title">Additional Information</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Duration (hours)*</label>
+                                        <input type="number" class="form-control" min="0" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Skill Level*</label>
+                                        <select class="form-select" required>
+                                            <option value="">Select Level</option>
+                                            <option value="beginner">Beginner</option>
+                                            <option value="intermediate">Intermediate</option>
+                                            <option value="advanced">Advanced</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="form-label">Requirements</label>
+                                        <textarea class="form-control" rows="3" placeholder="Enter course requirements"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Form Actions -->
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i> Save Course
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary">
+                                    Save as Draft
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
